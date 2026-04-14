@@ -5,11 +5,11 @@
 typedef int (*fptr)(int,int);
 
 int main(){
-
+    char op[20];
+    int x,y;
     while(scanf("%s %d %d", op, &x, &y) != EOF)
     {
-        char op[20];
-        int x,y;
+        
         char file[40] = "lib";
         strcat(file,op);
         strcat(file,".so");
