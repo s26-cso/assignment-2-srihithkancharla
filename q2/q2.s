@@ -1,6 +1,7 @@
 .section .rodata
 fmt:      .string "%lld "
-
+fmt_no_space: .string "%lld\n" 
+ 
 .section .text
 .globl main
 
@@ -106,7 +107,16 @@ print_loop:
 
 skip_sub:
 
+        li x31,1
+        beq x22,x31,use_no_space
+
         la x10,fmt
+        j do_print
+
+use_no_space:
+        la x10,fmt_no_space
+
+do_print:
         addi sp,sp,-16
         sd x1,0(sp)
         call printf
