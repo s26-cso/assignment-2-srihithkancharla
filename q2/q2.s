@@ -114,6 +114,7 @@ skip_sub:
         j do_print
 
 use_no_space:
+
         la x10,fmt_no_space
 
 do_print:
