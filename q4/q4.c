@@ -6,10 +6,10 @@ typedef int (*fptr)(int,int);
 
 int main(){
 
-    while(1){
+    while(scanf("%s %d %d", op, &x, &y) != EOF)
+    {
         char op[20];
         int x,y;
-        scanf("%s %d %d",op,&x,&y);
         char file[40] = "lib";
         strcat(file,op);
         strcat(file,".so");
